@@ -18,8 +18,11 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+const evenNumber = mixedNumbers.filter((evens) => {
+  return evens % 2 === 0 
+})
 
+console.log(evenNumber)
 
 
 ////////// PROBLEM 2 //////////
@@ -39,8 +42,10 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 // CODE HERE
-const postTaxPrices // = prices.map(/* Provide Your Callback Here );
-
+const postTaxPrices = prices.map((newPrice) => {
+  return newPrice * 1.07
+})
+console.log(postTaxPrices)
 
 
 ////////// PROBLEM 3 //////////
@@ -57,8 +62,10 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
-
+const totalPopulation  = populations.reduce((a, b) => {
+  return a + b
+})
+console.log(totalPopulation)
 
 
 ////////// PROBLEM 4 //////////
@@ -82,8 +89,11 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const myStrongest = monstersInYourPocket.filter((power) => {
+  return power.CP > 200
+})
 
+console.log(myStrongest)
 
 
 ////////// PROBLEM 5 //////////
@@ -100,9 +110,16 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
+const orderTotal = orders.reduce((total, value) => {
+  return total + (value.price * value.tax)
+}, 0)
+
+let newOrdered = orders.map((value) => (value.price - value.price * value.tax))
+let newReducedOrder = newOrdered.reduce((acc, value) => acc + value)
 
 
-
+console.log(newOrdered)
+console.log(orderTotal)
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
@@ -120,3 +137,13 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+
+const getBob = purchases.filter((name) =>{
+  return name.owner === `Bob`
+})
+
+let getBobTotal = getBob.reduce((value, total) => {
+  return total.price + value
+}, 0)
+console.log(getBob)
+console.log(getBobTotal)
