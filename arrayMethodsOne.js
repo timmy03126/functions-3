@@ -114,7 +114,7 @@ const orderTotal = orders.reduce((total, value) => {
   return total + (value.price * value.tax)
 }, 0)
 
-let newOrdered = orders.map((value) => (value.price - value.price * value.tax))
+let newOrdered = orders.map((value) => (value.price + value.price * value.tax))
 let newReducedOrder = newOrdered.reduce((acc, value) => acc + value)
 
 
