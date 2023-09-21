@@ -10,8 +10,9 @@ let numbers = [40, 68, 14, 90, 49];
 */
 
 // CODE HERE
+numbers.forEach((num) =>  console.log(num / 2) )
 
-
+ 
 ////////// PROBLEM 2 //////////
 
 /* 
@@ -23,8 +24,11 @@ let numbers = [40, 68, 14, 90, 49];
 */
 
 // CODE HERE
+const newArray = numbers.map((num2) => {
+  return num2 / 2
+})
 
-
+console.log(newArray)
 ////////// PROBLEM 3 //////////
 
 // ***** Do not edit the code below *****
@@ -50,7 +54,11 @@ let cities = [
 */
 
 // CODE HERE
+let filteredCities = cities.filter((name) => {
+  return name.endsWith(`i`)
+})
 
+console.log(filteredCities)
 
 ////////// PROBLEM 4 //////////
 
@@ -86,7 +94,16 @@ let fruits = [
 */
 
 // CODE HERE
-
+fruits.forEach((fruitObj, index) => {
+  if (fruitObj.color === `red`) {
+     console.log(`The fruit with index ${index} is an apple`)
+  } else if (fruitObj.color === `orange`) {
+    console.log(`The fruit with index ${index} is an orange`)
+  }
+   else {
+    console.log(`The fruit with index ${index} is neither apple or orange`)
+  } 
+})
 
 
 /* 
